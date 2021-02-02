@@ -21,7 +21,7 @@ xdebug.remote_autostart =true
 xdebug.remote_log = "C:\xampp\tmp\xdebug.txt"
 ```
 
-- Configure your IDE
+- Configure your IDE (XDebug Client)
 
  PHPStorm
    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Phpstorm.png/220px-Phpstorm.png" width="25" height="25">
@@ -31,6 +31,10 @@ Languages & Frameworks > Setting > php > Debug :
 XDebug : 
   Debug port : 9000 
   Host : localhost # same as xdebug.remote_host=localhost
+Languages & Frameworks > Setting > php > Debug > DBGp Proxy :
+  IDE Key : STDIDE
+  Host : localhost
+  Port : 9000 
 Languages & Frameworks > Setting > php > Servers :
   Project Files: /path/to/project 
   Host : localhost
