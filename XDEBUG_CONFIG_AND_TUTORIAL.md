@@ -19,6 +19,8 @@ xdebug.idekey=STDIDE
 xdebug.default_enable=true
 xdebug.remote_autostart =true
 xdebug.remote_log = "C:\xampp\tmp\xdebug.txt"
+xdebug.profiler_enable= 1;
+xdebug.profiler_output_dir= "C:\xampp\tmp"
 ```
 
 - Configure your IDE (XDebug Client)
