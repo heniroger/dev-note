@@ -160,6 +160,17 @@ Type this url  in your browser.
 ```
 http://my.projectname.local
 ```
+Note : If <span style="color:red"> **xdebug.remote_autostart=false**</span>, you may start xdebug session by adding <span style="color:red">**XDEBUG_SESSION_START=STDIDE**</span> paramater in your url.
+```yaml
+# Note : STDIDE : xdebug.idekey
+http://my.projectname.local?XDEBUG_SESSION_START=STDIDE
+```
+ For each url you access, you must always put this parameter to start xdebug session
+```yaml
+# Another URL Example
+http://my.projectname.local/api/users/add?XDEBUG_SESSION_START=STDIDE
+
+```    
 Php execution may stopped at first breakpoint in index.php file.\
 If it's not working, verify your:
 
