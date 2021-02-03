@@ -120,6 +120,44 @@ Type this url  in your browser.
 ```
 http://localhost:8080
 ```
+Note: If you are using virtualhost, don't forget this.
+```ini
+; update this line in your php.ini file
+; Host name example: my.projectname.local
+xdebug.remote_host=my.projectname.local
+```
+In your hosts file:
+```yaml
+# in your hosts file : /etc/hosts
+127.0.0.1 my.projectname.local
+# Optional config (for vhosts server alias)
+127.0.0.1 myprojectnamehost
+```
+In your virtualhost *.conf file:
+```apache
+# Example for my Symfony 4.4 project
+<VirtualHost *:80>
+    ServerAlias myprojectnamehost
+    ServerName my.projectname.local
+    #Alias /back C:\Users\MyName\path\to\project\my.projectname.local\public
+    DocumentRoot  C:\Users\MyName\path\to\project\my.projectname.local\public
+    <Directory  C:\Users\MyName\path\to\project\my.projectname.local\public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog C:\xampp-php7.4.14\apache\logs\my.projectname.local.error.log
+    CustomLog C:\xampp-php7.4.14\apache\logs\my.projectname.local.access.log common
+    # For Linux
+    #ErrorLog /var/log/apache2/my.projectname.local.error.log
+    #CustomLog /var/log/apache2/my.projectname.local.access.log common
+</VirtualHost>
+```
+
+Type this url  in your browser.
+```
+http://my.projectname.local
+```
 Php execution may stopped at first breakpoint in index.php file.\
 If it's not working, verify your:
 
