@@ -93,6 +93,44 @@ http://localhost:8000/apiusers?XDEBUG_SESSION_START=STDIDE
 
 ```
 
+- Let's create a sample project if everything are all rights
+
+```bash
+$ mkdir test-xdebug-project
+$ cd test-xdebug-project
+$ touch index.php
+```
+Add this content in index.php file
+```php
+<?php
+$a = 2;
+$b = $a +2;
+$a *= $b;
+
+echo $a;
+```
+In your IDE, **Add breakpoints** for each line in index.php. \
+Click to **"Start Debugging"** IDE Button. \
+Run this command in your terminal
+```bash
+ # in test-xdebug-project folder
+ $ php -S localhost:8080 -t .
+```
+Type this url  in your browser.
+```
+http://localhost:8080
+```
+Php execution may stopped at first breakpoint in index.php file.\
+If it's not working, verify your:
+
+- Xdebug configuration in php.ini file(specially host and port,...)
+- Xdebug port isn't used by another process. 
+- IDE configuration(launch.json in vscode). It must be same
+as your config in php.ini file
+- php version used by your IDE
+- Host configuration if you're using Virtualhost
+
+
 
 
 
