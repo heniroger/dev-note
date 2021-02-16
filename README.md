@@ -1,1 +1,0 @@
-# XDebug Configuration Tutorial
