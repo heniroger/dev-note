@@ -4,7 +4,23 @@
 - Install PHP
 - Install PHP Xdebug : If  Windows OS download **Xdebug.dll** put it in Xampp *.dll  file path , normally in **C:\Xampp\php\ext** 
 
-- Configure xdebug in php.ini file and  add these lines :
+- Configure xdebug in php.ini file and  add these lines : \
+
+**For v3.x**
+```ini
+[xdebug]
+zend_extension=xdebug.so
+export XDEBUG_SESSION=STDIDE
+xdebug.mode=debug
+xdebug.client_host=site.dev.domain.local
+xdebug.client_port=9003
+xdebug.remote_handler=dbgp
+xdebug.idekey=STDIDE
+xdebug.default_enable=true
+xdebug.start_with_request=yes
+xdebug.log = "/var/log/xdebug.log"
+``` 
+  **For v2.x:** 
 ```ini
 [xdebug]
 ;zend_extension = "/path/to/xdebug.so or /path/to/xdebug.dll"
