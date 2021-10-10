@@ -157,12 +157,14 @@ In your virtualhost *.conf file:
 <VirtualHost *:80>
     ServerAlias myprojectnamehost
     ServerName my.projectname.local
+    SetEnv ENV dev
     #Alias /back C:\Users\MyName\path\to\project\my.projectname.local\public
     DocumentRoot  C:\Users\MyName\path\to\project\my.projectname.local\public
     <Directory  C:\Users\MyName\path\to\project\my.projectname.local\public>
         DirectoryIndex index.php
         AllowOverride All
         Require all granted
+        FallbackResource /index.php
     </Directory>
     ErrorLog C:\xampp-php7.4.14\apache\logs\my.projectname.local.error.log
     CustomLog C:\xampp-php7.4.14\apache\logs\my.projectname.local.access.log common
