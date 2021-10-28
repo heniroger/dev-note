@@ -158,6 +158,8 @@ In your virtualhost *.conf file:
     ServerAlias myprojectnamehost
     ServerName my.projectname.local
     SetEnv ENV dev
+    # Authorization header : important for JWT for API based application
+    #SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
     #Alias /back C:\Users\MyName\path\to\project\my.projectname.local\public
     DocumentRoot  C:\Users\MyName\path\to\project\my.projectname.local\public
     <Directory  C:\Users\MyName\path\to\project\my.projectname.local\public>
