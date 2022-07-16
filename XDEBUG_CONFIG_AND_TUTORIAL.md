@@ -99,7 +99,9 @@ VS Code
 }
 
 ```
-Note: If you use **apache2** server, you should restart to work debugging properly. For VS Code, don't forget to check **Allow Breakpoints Everywhere** and **AutoExpand Lazy Variable**. You click on: **File > Preferences > Settings > User(Tab) > Features > Debug**
+Note: If you use **apache2** server, you should restart to work debugging properly. For VS Code, don't forget to check **Allow Breakpoints Everywhere** and **AutoExpand Lazy Variable**. You click on: **File > Preferences > Settings > User(Tab) > Features > Debug** \
+
+**Launching Xdebug:**(For vscode only)  Add **launch.json** file. Press **F5** key to run Debugging for your IDE. And navigate to your link with XDEBUG_SESSION_START parameter on your url. For example: http://domain.name/api/url?XDEBUG_SESSION_START=IDEKEY . If your configuration isn't wrong, it should work. It start to debug at the first breakpoints you put.
 
 - Run with Postman <img src="https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png" width="25" height="25">
 ```yaml
