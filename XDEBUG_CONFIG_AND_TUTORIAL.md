@@ -99,7 +99,7 @@ VS Code
 }
 
 ```
-  
+Note: If you use **apache2** server, you should restart to work debugging properly. For VS Code, don't forget to check **Allow Breakpoints Everywhere** and **AutoExpand Lazy Variable**. You click on: **File > Preferences > Settings > User(Tab) > Features > Debug**
 
 - Run with Postman <img src="https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png" width="25" height="25">
 ```yaml
