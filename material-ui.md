@@ -1,5 +1,24 @@
 # Note Material UI
 
+## Custom Spacing  [::](https://mui.com/material-ui/customization/spacing/)
+- **Default spacing before overriding**
+```js
+const theme = createTheme();
+
+theme.spacing(2); // `${8 * 2}px` = '16px'
+``` 
+
+- **Custom spacing**
+```js
+
+const theme = createTheme({
+  spacing: 4,
+});
+
+theme.spacing(2); // `${4 * 2}px` = '8px'
+
+``` 
+
 ## Palette [::](https://mui.com/material-ui/customization/palette/)
 
 ```js
