@@ -1,8 +1,53 @@
 # Note Material UI
 
+## Theming [::](https://mui.com/material-ui/customization/theming/)
+- **Example: Change checkbox color when checked**
+```js
+import * as React from 'react';
+import Checkbox from '@mui/material/Checkbox';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { orange } from '@mui/material/colors';
+
+declare module '@mui/material/styles' {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      danger?: string;
+    };
+  }
+}
+
+const CustomCheckbox = styled(Checkbox)(({ theme }) => ({
+  color: theme.status.danger,
+  '&.Mui-checked': {
+    color: theme.status.danger,
+  },
+}));
+
+const theme = createTheme({
+  status: {
+    danger: orange[500],
+  },
+});
+
+export default function CustomStyles() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CustomCheckbox defaultChecked />
+    </ThemeProvider>
+  );
+}
+
+``` 
+
 ## Css baseline [::](https://mui.com/material-ui/react-css-baseline/)
 
-### Global reset application css
+- **Global reset application css**
 ```js
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,7 +63,7 @@ export default function MyApp() {
 
 ```
 
-### Reset some component css style: Scoping on children
+- **Reset some component css style: Scoping on children**
 
 ```js
 import * as React from 'react';
@@ -36,7 +81,7 @@ export default function MyApp() {
 
 ```
 
-### Override example
+- **Override example**
 
 ```js
 import darkScrollbar from '@mui/material/darkScrollbar';
