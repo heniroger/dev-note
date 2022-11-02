@@ -1,4 +1,4 @@
-# Material UI responsive
+# Note Material UI: responsive
 
 # Breakpoint
 
